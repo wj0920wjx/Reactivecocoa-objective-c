@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,142 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txV-TQ-m0g">
+                                <rect key="frame" x="0.0" y="88" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADv-jb-pPF">
+                                        <rect key="frame" x="90" y="49" width="61" height="30"/>
+                                        <state key="normal" title="RAC按钮"/>
+                                        <connections>
+                                            <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kl8-D4-W3D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.70320957159999997" blue="0.11748429840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ADv-jb-pPF" firstAttribute="centerX" secondItem="txV-TQ-m0g" secondAttribute="centerX" id="5uf-qM-y3R"/>
+                                    <constraint firstItem="ADv-jb-pPF" firstAttribute="centerY" secondItem="txV-TQ-m0g" secondAttribute="centerY" id="AqA-xR-wEK"/>
+                                    <constraint firstAttribute="width" constant="240" id="ROd-UN-waM"/>
+                                    <constraint firstAttribute="height" constant="128" id="kPz-Xk-9Di"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入框1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAX-P6-6qL">
+                                <rect key="frame" x="40" y="256" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入框2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQ6-uP-k6u">
+                                <rect key="frame" x="40" y="326" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sy-7f-Zoc">
+                                <rect key="frame" x="80" y="396" width="215" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jlB-k9-k7c"/>
+                                </constraints>
+                                <state key="normal" title="登录"/>
+                                <connections>
+                                    <segue destination="a0J-jd-UJV" kind="popoverPresentation" popoverAnchorView="5sy-7f-Zoc" id="6gU-TO-ieJ">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="txV-TQ-m0g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="68" id="6YT-Dg-hU4"/>
+                            <constraint firstItem="txV-TQ-m0g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Adq-vl-L6w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iQ6-uP-k6u" secondAttribute="trailing" constant="40" id="BNS-dK-phd"/>
+                            <constraint firstItem="iQ6-uP-k6u" firstAttribute="top" secondItem="oAX-P6-6qL" secondAttribute="bottom" constant="40" id="C1F-FO-Yjg"/>
+                            <constraint firstItem="5sy-7f-Zoc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="HWy-jk-tck"/>
+                            <constraint firstItem="iQ6-uP-k6u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="P51-sO-k6w"/>
+                            <constraint firstItem="5sy-7f-Zoc" firstAttribute="top" secondItem="iQ6-uP-k6u" secondAttribute="bottom" constant="40" id="RwH-xE-uia"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oAX-P6-6qL" secondAttribute="trailing" constant="40" id="WPu-UK-gd4"/>
+                            <constraint firstItem="oAX-P6-6qL" firstAttribute="top" secondItem="txV-TQ-m0g" secondAttribute="bottom" constant="40" id="ZRQ-Q0-sja"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5sy-7f-Zoc" secondAttribute="trailing" constant="80" id="bMt-dt-RbC"/>
+                            <constraint firstItem="oAX-P6-6qL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="k6B-0k-auB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="5sy-7f-Zoc" id="GTL-fo-WC4"/>
+                        <outlet property="racBtn" destination="ADv-jb-pPF" id="6ur-JB-CPE"/>
+                        <outlet property="racTextField1" destination="oAX-P6-6qL" id="4q2-AO-S0z"/>
+                        <outlet property="racTextField2" destination="iQ6-uP-k6u" id="gyM-Yg-qwJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
+        </scene>
+        <!--Rac add Observer View Controller-->
+        <scene sceneID="eMg-2K-l7O">
+            <objects>
+                <viewController id="a0J-jd-UJV" customClass="Rac_addObserverViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="09A-1g-ScS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1A-JU-wvQ">
+                                <rect key="frame" x="156" y="318" width="62" height="30"/>
+                                <state key="normal" title="发送通知"/>
+                                <connections>
+                                    <action selector="postNotice:" destination="a0J-jd-UJV" eventType="touchUpInside" id="R1o-yt-MJt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="B1A-JU-wvQ" firstAttribute="centerX" secondItem="09A-1g-ScS" secondAttribute="centerX" id="ipQ-XR-vay"/>
+                            <constraint firstItem="B1A-JU-wvQ" firstAttribute="centerY" secondItem="09A-1g-ScS" secondAttribute="centerY" id="s4C-wO-T37"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gLK-N1-le6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Unh-eR-l53"/>
+                    <connections>
+                        <outlet property="postBtn" destination="B1A-JU-wvQ" id="Kvi-xZ-OFk"/>
+                        <segue destination="zWP-fa-v8R" kind="presentation" identifier="sequence" id="0Ob-Mw-mGS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YS3-jW-rNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="33"/>
+        </scene>
+        <!--Sequence View Controller-->
+        <scene sceneID="hBR-0i-pRV">
+            <objects>
+                <viewController id="zWP-fa-v8R" customClass="RACSequenceViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i0C-OX-JnJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MQ-Ii-Dti">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="qnh-EF-Kyq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1MQ-Ii-Dti" firstAttribute="centerX" secondItem="i0C-OX-JnJ" secondAttribute="centerX" id="5cQ-8X-eP4"/>
+                            <constraint firstItem="1MQ-Ii-Dti" firstAttribute="centerY" secondItem="i0C-OX-JnJ" secondAttribute="centerY" id="VrQ-gH-wyK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Ic-nv-2M2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdZ-Vz-a1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="35"/>
         </scene>
     </scenes>
 </document>
